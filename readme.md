@@ -21,7 +21,7 @@ Steps to get this running:
 4. Run `npm install` in this directory
 5. Add `bookmarklet.min.js` as a bookmarklet on your browser. For firefox, you'll need to edit an option, see below
 
-Firefox configuration. There's a small issue with firefox and websockets on bookmarklets. This can easily be resolved by going to about:config, and toggling network.websocket.allInsecureFromHTTPS to true.
+Firefox configuration. There's a small issue with firefox and websockets on bookmarklets. This can easily be resolved by going to about:config, and toggling `network.websocket.allowInsecureFromHTTPS` to true.
 
 # 2. creating animations
 
