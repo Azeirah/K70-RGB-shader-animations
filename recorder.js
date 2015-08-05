@@ -25,7 +25,7 @@ if (options.saveToFile) {
 
 function hex(num) {
     var hexnum = num.toString(16);
-    if (num <= 16)
+    if (num < 16)
         hexnum = "0" + hexnum
     return hexnum;
 }
