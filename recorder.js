@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 var fs     = require('fs');
 var ws     = require('ws');
-var keys   = require('./scripts/keys');
-var player = require('./scripts/player');
-require('./scripts/polyfills.js');
+var keys   = require('./source/keys');
+var player = require('./source/player');
+require('./source/polyfills.js');
 
 var options = {
   saveToFile: false,
