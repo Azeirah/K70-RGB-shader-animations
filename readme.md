@@ -23,6 +23,8 @@ Steps to get this running:
 
 Firefox configuration. There's a small issue with firefox and websockets on bookmarklets. This can easily be resolved by going to about:config, and toggling `network.websocket.allowInsecureFromHTTPS` to true.
 
+Additionally, you can make playRGBFile and the recorder executable using `chmod +x ./playRGBFile.js recorder.js`. Allowing you to omit `node` on the command line. `playRGBFile.js "example animations/forest.rgb"
+
 # 2. creating animations
 
 Visit shadertoy, and pick out a few of your favorite shaders. Then run `node recorder.js <animation file name>`. Click on the bookmarklet, and hover over the shader canvas. You can stop recording by pressing ctrl-c.
@@ -30,3 +32,5 @@ Visit shadertoy, and pick out a few of your favorite shaders. Then run `node rec
 # 3. Viewing and previewing animations
 
 An animation can be viewed on your keyboard using `node playRGBFile.js <filename.rgb>`. You can preview the animation with `preview.html`
+
+You can find example animations inside the aptly named, `example animations` folder.

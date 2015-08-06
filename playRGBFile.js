@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-var player = require('./player');
+var player = require('./scripts/player');
 var fs     = require('fs');
 
 var rgbFile;
