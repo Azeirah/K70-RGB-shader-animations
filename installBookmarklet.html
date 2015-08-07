@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Installing the bookmarklet</title>
+    <style>
+        body {
+            width: 960px;
+            margin: 0 auto;
+            font-family: helvetica;
+            padding: calc((500px / 2));
+        }
+
+        div {
+            width: 500px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            font-size: 30px;
+            display: block;
+            width: 500px;
+            height: 500px;
+            line-height: 500px;
+            text-align: center;
+            vertical-align: middle;
+            background-color: orangered;
+            border-radius: 50%;
+        }
+
+        span {
+            display: none;
+        }
+
+        a::before {
+            content: "Drag me to your bookmarks bar";
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <a href='javascript: var socket = new WebSocket("ws://localhost:8000"); var hovertarget; window.addEventListener("mousemove", function (event) {if (hovertarget) return; if (event.target.tagName === "CANVAS") {hovertarget = event.target; doCanvasThingy(hovertarget); } }); function doCanvasThingy(canvas) {var ctx             = canvas.getContext("2d"); var renderTarget    = document.createElement("canvas"); var renderTargetCtx = renderTarget.getContext("2d"); renderTarget.width  = 26; renderTarget.height = 6; document.body.appendChild(renderTarget); renderTarget.setAttribute("style", "position: fixed; top: 0; left: 0; z-index: 9999;"); window.setInterval(function () {renderTargetCtx.drawImage(canvas, 0, 0, 26, 6); var data = renderTargetCtx.getImageData(0, 0, 26, 6); socket.send(JSON.stringify(Array.prototype.slice.call(data.data))); }, 1000/24); }'><span>rgbrecorder</span></a>
+
+        <p>Drag that huge circle to your bookmarks bar!</p>
+    </div>
+</body>
+</html>
